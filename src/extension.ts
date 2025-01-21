@@ -19,12 +19,12 @@ export function activate(context: vscode.ExtensionContext) {
 			let arr:vscode.InlineCompletionItem[]=[];
 			const item:vscode.InlineCompletionItem = {
 				insertText:'test',
-				range:new vscode.Range(position,position.translate(0,4)),
-				command: {
+				range:new vscode.Range(position,position.translate(0,4))
+				/*,command: {
                     command: "hello.helloWorld",
                     title: "Hello World",
                     arguments: []
-                }
+                }*/
 				
 			}
 			arr.push(item);
@@ -34,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
 	
 		
 	
-    	context.subscriptions.push(vscode.languages.registerInlineCompletionItemProvider({pattern:'**'},provider));
+    	context.subscriptions.push(vscode.languages.registerInlineCompletionItemProvider({pattern: '**'},provider));
 
 
 
